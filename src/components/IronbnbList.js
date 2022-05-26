@@ -13,7 +13,7 @@ function IronbnbList() {
       setApartments(response.data);
       setFetching(false);
     });
-  }, []);
+  }, []);  // use an empty array just once! not on every button... timer...
 
   return (
     <div>

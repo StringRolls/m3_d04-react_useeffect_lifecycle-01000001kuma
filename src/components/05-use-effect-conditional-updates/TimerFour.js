@@ -7,14 +7,17 @@ function TimerFour() {
   // 2. As you may have noticed useEffect takes a second argument `[]` which is the dependency array of values that the effect depends on.
   useEffect(() => {
     console.log("useEffect - Mounting (initial render)");
+    
     const id = setInterval(() => {
-      setCount((prevCount) => prevCount + 1);
+      setCount(prevCount=>{
+        console.log(prevCount + 1)
+        return prevCount + 1})
     }, 1000);
-
-    return () => {
+   return () => {
       clearInterval(id);
       console.log("Component Unmounting");
     };
+
   }, []);
 
   // Add a new effect that will run only
